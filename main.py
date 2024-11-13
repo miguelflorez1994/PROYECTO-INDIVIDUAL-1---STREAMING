@@ -84,7 +84,7 @@ def cantidad_filmaciones_dia(df, dia):
 
 # Funcion score de pelicula
 def score_titulo(df, titulo_de_la_filmación):
-   
+
     """
     Busca la pelicula en base al titulo proporcionado y retorna el año de salida y el score de popularidad
     :param titulo_de_la_filmación: Titulo de la pelicula de la cual se quiere obtener la informacion
@@ -97,7 +97,7 @@ def score_titulo(df, titulo_de_la_filmación):
 
     # Generamos un Data Frame nuevo con las filas que contengan el input en el titulo
     result = df[df['title'].str.lower().str.contains(title, na=False)]
-   
+
     # Condicional si se encuentra un titulo similar al input
     if not result.empty:
 
@@ -111,7 +111,7 @@ def score_titulo(df, titulo_de_la_filmación):
     # Return en caso de no encontrar un titulo que contenga el input
     else:
         return (f"No se encontraron peliculas que contengan '{titulo_de_la_filmación}' en el titulo")
-   
+
 
 
 # Funcion promedio de votacion
@@ -151,7 +151,7 @@ def votos_titulo(df, titulo_de_la_filmación):
         # Return en caso de no encontrar un titulo que contenga el input
     else:
         return (f"No se encontraron peliculas que contengan '{titulo_de_la_filmación}' en el titulo") 
-   
+
 
 # Funcion info del actor
 def get_actor(df, nombre_actor):
@@ -226,9 +226,9 @@ def get_director(df, nombre_director):
             }
             director_info[f"Pelicula {i}"] = pelicula_info
             movnum += 1
-
+            
         return director_info
-     
+
     # Retorno en caso de no encontrar coincidencias
     else:
         return (f"No se encontro un director que contenga '{nombre_director}' en el nombre.")
